@@ -26,3 +26,13 @@ Route::get('/price', [PriceController::class, 'create']);
 Route::get('/pricelist', [PriceListController::class, 'index']);
 //
 Route::get('/cleareall', [ClearController::class, 'delete']);
+//
+Route::get('/another-select', function () {
+    return view('another-select');
+});
+Route::get('/another-input', function () {
+    return view('another-input');
+});
+Route::get('/new-table', function () {
+    return view('another-table');
+});

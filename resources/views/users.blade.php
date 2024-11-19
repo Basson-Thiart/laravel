@@ -6,9 +6,10 @@
 </head>
 
 <body>
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-
+    <x-alert message="This is my message" />
+    <x-alert message="My name is Basson" />
+    <x-forms.text-input />
+    <x-forms.select />
 </body>
 
 </html>
