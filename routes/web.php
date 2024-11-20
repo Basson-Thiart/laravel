@@ -6,6 +6,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PriceListController;
 use App\Http\Controllers\StockController;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,3 +37,15 @@ Route::get('/another-input', function () {
 Route::get('/new-table', function () {
     return view('another-table');
 });
+//
+//
+Route::get('dashboard', function () {
+    return view('pages.dashboard');
+});
+//
+Route::post('profile', function (Request $request) {
+    dd($request);
+});
+//
+Route::get('/price-create', [PriceController::class, 'createView']);
+Route::post('/price-create', [PriceController::class, 'create']);

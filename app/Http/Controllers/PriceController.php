@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Invoice;
-use App\Models\Prices;
+use App\Models\Prices2;
 use Illuminate\Http\Request;
 
 class PriceController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
-        $newPrice = new Prices();
-        $newPrice->price = 'R' . rand(100, 1000);
-        $newPrice->save();
-        return view('Price', ['price' => $newPrice]);
+
+        $data = $request->all();
+        // dd($data);
+
+        Prices2::create([
+            'price' => $data['price'],
+            'artikelkode' => $data['artikelkode'],
+        ]);
+    }
+
+    public function createView()
+    {
+        return view('pages.create-price');
     }
 }
